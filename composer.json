@@ -1,0 +1,56 @@
+{
+    "name": "expedy/loco",
+    "description": "GPS and location parser used by Expedy",
+    "keywords": [
+        "expedy",
+        "gps",
+        "parsing",
+        "laravel"
+    ],
+    "homepage": "https://github.com/expedy/loco",
+    "license": "GPL-2.0-only",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Jake Paine",
+            "email": "expedy@protonmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Expedy\\Loco\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Expedy\\Loco\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Expedy\\Loco\\LocoServiceProvider"
+            ],
+            "aliases": {
+                "Loco": "Expedy\\Loco\\LocoFacade"
+            }
+        }
+    }
+}
